@@ -66,7 +66,7 @@ const translations = {
     "contact.eyebrow": "/* contato */ fale comigo",
     "contact.title": "Vamos tocar juntos?",
     "contact.lead":
-      "Tem um projeto em mente ou quer bater um papo sobre tecnologia? Me chama.",
+      "Estou em busca da minha primeira oportunidade para somar, evoluir junto com o time e manter as entregas no ritmo certo.",
     "footer.text": "DOUGLAS PHELIPE — construído com código e compasso.",
     "nav.certs": "CERTIFICAÇÕES",
     "certs.eyebrow": "/* certificações */ discos de ouro",
@@ -137,7 +137,7 @@ const translations = {
     "contact.eyebrow": "/* contact */ talk to me",
     "contact.title": "Shall we play together?",
     "contact.lead":
-      "Have a project in mind or want to chat about technology? Reach out.",
+      "I am looking for my first opportunity to contribute, grow alongside the team, and keep deliveries on track.",
     "footer.text": "DOUGLAS PHELIPE — built with code and rhythm.",
     "nav.certs": "CERTIFICATIONS",
     "certs.eyebrow": "/* certifications */ gold records",
