@@ -1,346 +1,718 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" data-theme="dark">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Douglas Phelipe | Dev</title>
-<meta name="description" content="Portfólio de Rafael Lima, desenvolvedor full stack.">
-<link rel="icon" href="data:,">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="logo-2.png">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Douglas Phelipe | Dev</title>
+    <meta
+      name="description"
+      content="Portfólio de Rafael Lima, desenvolvedor full stack."
+    />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="logos/logo-2.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ BACKGROUND AMBIENT LAYER ============ -->
+    <div class="noise-overlay" aria-hidden="true"></div>
 
-<!-- ============ BACKGROUND AMBIENT LAYER ============ -->
-<div class="noise-overlay" aria-hidden="true"></div>
+    <!-- ============ NAVBAR ============ -->
+    <header class="nav" id="top">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo" aria-label="Início">
+          <svg viewBox="0 0 40 40" class="logo-sticks" aria-hidden="true">
+            <rect
+              x="4"
+              y="30"
+              width="30"
+              height="4"
+              rx="2"
+              transform="rotate(-35 4 30)"
+              fill="currentColor"
+            />
+            <rect
+              x="4"
+              y="6"
+              width="30"
+              height="4"
+              rx="2"
+              transform="rotate(35 4 6)"
+              fill="currentColor"
+            />
+          </svg>
+          <span class="logo-name">DOUGLAS<em>.PHELIPE</em></span>
+        </a>
 
-<!-- ============ NAVBAR ============ -->
-<header class="nav" id="top">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo" aria-label="Início">
-      <svg viewBox="0 0 40 40" class="logo-sticks" aria-hidden="true">
-        <rect x="4" y="30" width="30" height="4" rx="2" transform="rotate(-35 4 30)" fill="currentColor"/>
-        <rect x="4" y="6" width="30" height="4" rx="2" transform="rotate(35 4 6)" fill="currentColor"/>
-      </svg>
-      <span>DOUGLAS<em>.PHELIPE</em></span>
-    </a>
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="#about" data-i18n="nav.about">SOBRE</a>
+          <a href="#skills" data-i18n="nav.skills">STACK</a>
+          <a href="#certifications" data-i18n="nav.certs">CERTIFICAÇÕES</a>
+          <a href="#projects" data-i18n="nav.projects">PROJETOS</a>
+          <a href="#timeline" data-i18n="nav.timeline">TRAJETÓRIA</a>
+          <a href="#contact" data-i18n="nav.contact">CONTATO</a>
+        </nav>
 
-    <nav class="nav-links" aria-label="Navegação principal">
-      <a href="#about" data-i18n="nav.about">SOBRE</a>
-      <a href="#skills" data-i18n="nav.skills">STACK</a>
-      <a href="#projects" data-i18n="nav.projects">PROJETOS</a>
-      <a href="#timeline" data-i18n="nav.timeline">TRAJETÓRIA</a>
-      <a href="#contact" data-i18n="nav.contact">CONTATO</a>
-    </nav>
-
-    <div class="nav-controls">
-      <button class="ctrl-btn" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g stroke-linecap="round"><line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/></g></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
-      </button>
-      <button class="ctrl-btn lang-btn" id="langToggle" type="button" aria-label="Alterar idioma">
-        <span class="lang-tag" data-lang-current>PT</span><span class="lang-sep">/</span><span class="lang-alt" data-lang-alt>EN</span>
-      </button>
-      <button class="nav-burger" id="navBurger" type="button" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <div class="nav-mobile" id="navMobile">
-    <a href="#about" data-i18n="nav.about">SOBRE</a>
-    <a href="#skills" data-i18n="nav.skills">STACK</a>
-    <a href="#projects" data-i18n="nav.projects">PROJETOS</a>
-    <a href="#timeline" data-i18n="nav.timeline">TRAJETÓRIA</a>
-    <a href="#contact" data-i18n="nav.contact">CONTATO</a>
-  </div>
-</header>
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="hero">
-  <div class="hero-stage" aria-hidden="true">
-    <div class="spotlight"></div>
-    <div class="eq-bars" id="heroEq"></div>
-    <div class="stage-floor"></div>
-  </div>
-
-  <div class="hero-inner">
-    <div class="hero-text">
-      <p class="eyebrow reveal" data-i18n="hero.status">◉ DISPONÍVEL PARA NOVOS PROJETOS</p>
-      <h1 class="hero-title reveal">
-        <span class="line" data-i18n="hero.title1"></span>
-        <span class="line accent" data-i18n="hero.title2"></span>
-      </h1>
-      <p class="hero-sub reveal" data-i18n="hero.sub">Código estruturado como uma boa batida: cada parte no seu tempo, cada função no seu compasso. Full stack por profissão, baterista por paixão.</p>
-      <div class="hero-cta reveal">
-        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">VER PROJETOS</a>
-        <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">FALAR COMIGO</a>
-      </div>
-      <div class="hero-meta reveal">
-        <span class="metronome" id="metronome" aria-hidden="true">
-          <svg viewBox="0 0 40 56"><path d="M8 52 L20 6 L32 52 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><line id="metArm" x1="20" y1="48" x2="20" y2="12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="20" cy="48" r="2.4" fill="currentColor"/></svg>
-        </span>
-        <span class="hero-meta-text mono" data-i18n="hero.tempo">92 BPM · EM FOCO</span>
-      </div>
-    </div>
-
-    <div class="hero-avatar reveal-avatar">
-      <div class="avatar-ring"></div>
-      <!-- ===== DRUMMER DEVELOPER, STATIC POSE, HOLDING STICKS ===== -->
-       <img class="avatar-svg" src="logo.png" alt="avatar">
-    </div>
-  </div>
-
-  <a href="#about" class="scroll-cue" aria-label="Rolar para baixo">
-    <span></span>
-  </a>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="section" id="about">
-  <div class="section-inner">
-    <p class="eyebrow mono reveal" data-i18n="about.eyebrow">/* sobre mim */ compasso e código</p>
-    <h2 class="section-title reveal" data-i18n="about.title">Quem toca por trás do teclado.</h2>
-
-    <div class="about-grid">
-      <div class="about-copy reveal">
-        <p data-i18n="about.p1">Sou <strong>Douglas</strong>, desenvolvedor full stack com foco em construir produtos que funcionam de ponta a ponta — do banco de dados à interface.</p>
-        <p data-i18n="about.p2">Fora do código, sou baterista. Aprendi que estúdio e escritório pedem a mesma coisa: escutar antes de tocar, manter o tempo e saber quando o silêncio vale mais que uma nota extra.</p>
-        <p data-i18n="about.p3">Gosto de projetos que exigem estrutura — arquitetura clara, APIs previsíveis, interfaces que respondem no tempo certo.</p>
-        <p data-i18n="about.p4">Fora do código, sou baterista. Aprendi que estúdio e escritório pedem a mesma coisa: escutar antes de tocar, manter o tempo e saber quando o silêncio vale mais que uma nota extra.</p>
-      </div>
-
-      <div class="about-stats reveal">
-        <div class="stat-card">
-          <span>
-            <span class="stat-num mono" data-count="3">0</span><span class="stat-suffix">+</span>
-          </span>
-          <span class="stat-label" data-i18n="about.stat1">ANOS ESTUDANDO</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num mono" data-count="3">0</span>
-          <span class="stat-label" data-i18n="about.stat2">PROJETOS FEITOS</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num mono" data-count="6">0</span>
-          <span class="stat-label" data-i18n="about.stat3">STACKS DOMINADAS</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num mono" data-count="92">0</span>
-          <span class="stat-label" data-i18n="about.stat4">BPM EM FOCO</span>
+        <div class="nav-controls">
+          <button
+            class="ctrl-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="Alternar tema claro/escuro"
+            title="Alternar tema"
+          >
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" />
+              <g stroke-linecap="round">
+                <line x1="12" y1="1.5" x2="12" y2="4.5" />
+                <line x1="12" y1="19.5" x2="12" y2="22.5" />
+                <line x1="1.5" y1="12" x2="4.5" y2="12" />
+                <line x1="19.5" y1="12" x2="22.5" y2="12" />
+                <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" />
+                <line x1="17.7" y1="17.7" x2="19.8" y2="19.8" />
+                <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
+                <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
+              </g>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" />
+            </svg>
+          </button>
+          <button
+            class="ctrl-btn lang-btn"
+            id="langToggle"
+            type="button"
+            aria-label="Alterar idioma"
+          >
+            <span class="lang-tag" data-lang-current>PT</span
+            ><span class="lang-sep">/</span
+            ><span class="lang-alt" data-lang-alt>EN</span>
+          </button>
+          <button
+            class="nav-burger"
+            id="navBurger"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="nav-mobile" id="navMobile">
+        <a href="#about" data-i18n="nav.about">SOBRE</a>
+        <a href="#skills" data-i18n="nav.skills">STACK</a>
+        <a href="#projects" data-i18n="nav.projects">PROJETOS</a>
+        <a href="#timeline" data-i18n="nav.timeline">TRAJETÓRIA</a>
+        <a href="#contact" data-i18n="nav.contact">CONTATO</a>
+      </div>
+    </header>
 
-<!-- ============ SKILLS — MIXING CONSOLE ============ -->
-<section class="section section-alt" id="skills">
-  <div class="section-inner">
-    <p class="eyebrow mono reveal" data-i18n="skills.eyebrow">/* stack técnica */ mesa de som</p>
-    <h2 class="section-title reveal" data-i18n="skills.title">Cada tecnologia no seu canal.</h2>
-    <p class="section-lead reveal" data-i18n="skills.lead">Ferramentas que uso no dia a dia, equalizadas por nível de domínio.</p>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-stage" aria-hidden="true">
+        <div class="spotlight"></div>
+        <div class="eq-bars" id="heroEq"></div>
+        <div class="stage-floor"></div>
+      </div>
 
-    <div class="console reveal" id="console">
-      <div class="channel" data-level="90">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">90%</span>
-        <span class="channel-name">JavaScript</span>
-      </div>
-      <div class="channel" data-level="85">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">85%</span>
-        <span class="channel-name">TypeScript</span>
-      </div>
-      <div class="channel" data-level="85">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">85%</span>
-        <span class="channel-name">React</span>
-      </div>
-      <div class="channel" data-level="77">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">77%</span>
-        <span class="channel-name">Angular</span>
-      </div>
-      <div class="channel" data-level="72">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">72%</span>
-        <span class="channel-name">Python</span>
-      </div>
-      <div class="channel" data-level="74">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">74%</span>
-        <span class="channel-name">Java</span>
-      </div>
-      <div class="channel" data-level="84">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">84%</span>
-        <span class="channel-name">MySQL</span>
-      </div>
-      <div class="channel" data-level="80">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">80%</span>
-        <span class="channel-name">PostgreSQL</span>
-      </div>
-      <div class="channel" data-level="83">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">83%</span>
-        <span class="channel-name">Git</span>
-      </div>
-      <div class="channel" data-level="74">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">74%</span>
-        <span class="channel-name">Docker</span>
-      </div>
-      <div class="channel" data-level="79">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">79%</span>
-        <span class="channel-name">AWS</span>
-      </div>
-      <div class="channel" data-level="65">
-        <div class="channel-track"><div class="channel-fill"></div><div class="channel-cap"></div></div>
-        <span class="channel-pct mono">65%</span>
-        <span class="channel-name">Linux</span>
-      </div>
-    </div>
-
-    <div class="stack-icons reveal" aria-hidden="true">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angular/angular-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="">
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROJECTS ============ -->
-<section class="section" id="projects">
-  <div class="section-inner">
-    <p class="eyebrow mono reveal" data-i18n="projects.eyebrow">/* projetos */ setlist</p>
-    <h2 class="section-title reveal" data-i18n="projects.title">Faixas que já construí.</h2>
-    <p class="section-lead reveal" data-i18n="projects.lead">Uma seleção de projetos reais — de ferramentas simples a sistemas completos.</p>
-
-    <div class="tracklist reveal" id="tracklist">
-
-      <article class="track">
-        <span class="track-num mono">01</span>
-        <div class="track-body">
-          <h3 class="track-title">Radioscan</h3>
-          <p class="track-tech mono">Angular · Java · Python · Docker · AWS · Terraform</p>
-          <p class="track-desc" data-i18n="projects.p1desc">Plataforma web para visualização e gestão de exames radiológicos, focada na navegação segura de laudos e laudos/imagens para pacientes e profissionais de saúde.</p>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow reveal" data-i18n="hero.status">
+            ◉ DISPONÍVEL PARA NOVOS PROJETOS
+          </p>
+          <h1 class="hero-title reveal">
+            <span class="line" data-i18n="hero.title1"></span>
+            <span class="line accent" data-i18n="hero.title2"></span>
+          </h1>
+          <p class="hero-sub reveal" data-i18n="hero.sub">
+            Código estruturado como uma boa batida: cada parte no seu tempo,
+            cada função no seu compasso. Full stack por profissão, baterista por
+            paixão.
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1"
+              >VER PROJETOS</a
+            >
+            <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2"
+              >FALAR COMIGO</a
+            >
+          </div>
+          <div class="hero-meta reveal">
+            <span class="metronome" id="metronome" aria-hidden="true">
+              <svg viewBox="0 0 40 56">
+                <path
+                  d="M8 52 L20 6 L32 52 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linejoin="round"
+                />
+                <line
+                  id="metArm"
+                  x1="20"
+                  y1="48"
+                  x2="20"
+                  y2="12"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+                <circle cx="20" cy="48" r="2.4" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="hero-meta-text mono" data-i18n="hero.tempo"
+              >92 BPM · EM FOCO</span
+            >
+          </div>
         </div>
-        <div class="track-link-div">
-          <a href="https://github.com/DouglaasPH/frontend-radioscan" class="track-link" data-i18n="projects.frontend.link">Ver no GitHub (frontend) ↗</a>
-          <a href="https://github.com/DouglaasPH/api-radioscan" class="track-link" data-i18n="projects.backend.link">Ver no GitHub (backend) ↗</a>
-          <a href="https://github.com/DouglaasPH/terraform-radioscan" class="track-link" data-i18n="projects.terraform.link">Ver no GitHub (terraform) ↗</a>
+
+        <div class="hero-avatar reveal-avatar">
+          <div class="avatar-ring"></div>
+          <!-- ===== DRUMMER DEVELOPER, STATIC POSE, HOLDING STICKS ===== -->
+          <img class="avatar-svg" src="logos/logo.png" alt="avatar" />
         </div>
-      </article>
-
-      <article class="track">
-        <span class="track-num mono">02</span>
-        <div class="track-body">
-          <h3 class="track-title">iFlow</h3>
-          <p class="track-tech mono">Next.js · NestJS · MySQL</p>
-          <p class="track-desc" data-i18n="projects.p2desc">Plataforma para gestão e rastreabilidade de ocorrências acadêmicas, conectando professores, coordenação e responsáveis do registro à resolução.</p>
-        </div>
-        <a href="https://github.com/IFPE-Jaboatao/ocorrencias-time1" class="track-link" data-i18n="projects.link">Ver no GitHub ↗</a>
-      </article>
-
-      <article class="track">
-        <span class="track-num mono">03</span>
-        <div class="track-body">
-          <h3 class="track-title">Agendify</h3>
-          <p class="track-tech mono">React · Python · FastAPI · PostgreSQL</p>
-          <p class="track-desc" data-i18n="projects.p3desc">Plataforma de agendamento inteligente para autônomos, automatizando a gestão de horários, clientes e disponibilidade em um só lugar.</p>
-        </div>
-        <div class="track-link-div">
-          <a href="#" class="track-link" data-i18n="projects.frontend.link">Ver no GitHub (frontend) ↗</a>
-          <a href="#" class="track-link" data-i18n="projects.backend.link">Ver no GitHub (backend) ↗</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TIMELINE ============ -->
-<section class="section section-alt" id="timeline">
-  <div class="section-inner">
-    <p class="eyebrow mono reveal" data-i18n="timeline.eyebrow">/* trajetória */ set completo</p>
-    <h2 class="section-title reveal" data-i18n="timeline.title">Minha jornada até aqui.</h2>
-
-    <div class="beatline reveal" id="beatline">
-      <div class="beat-item">
-        <span class="beat-dot"></span>
-        <span class="beat-year mono">2026 — <span data-i18n="timeline.now">AGORA</span></span>
-        <h3 data-i18n="timeline.t1title">Desenvolvedor Full Stack Jr.</h3>
-        <p data-i18n="timeline.t1desc">Construindo produtos completos com React e Node.js, aprendendo arquitetura de sistemas no dia a dia.</p>
       </div>
-      <div class="beat-item">
-        <span class="beat-dot"></span>
-        <span class="beat-year mono">2025</span>
-        <h3 data-i18n="timeline.t2title">Mergulho em back-end</h3>
-        <p data-i18n="timeline.t2desc">APIs REST, bancos relacionais e autenticação passaram a fazer parte da rotina de projetos.</p>
-      </div>
-      <div class="beat-item">
-        <span class="beat-dot"></span>
-        <span class="beat-year mono">2024</span>
-        <h3 data-i18n="timeline.t3title">Primeiros passos no código</h3>
-        <p data-i18n="timeline.t3desc">Fundamentos de lógica, HTML, CSS e JavaScript — os primeiros compassos da jornada.</p>
-      </div>
-      <div class="beat-item">
-        <span class="beat-dot"></span>
-        <span class="beat-year mono">∞</span>
-        <h3 data-i18n="timeline.t4title">Baterista nas horas vagas</h3>
-        <p data-i18n="timeline.t4desc">Ensaiando compasso com o mesmo cuidado que reviso um pull request.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ CONTACT ============ -->
-<section class="section" id="contact">
-  <div class="section-inner contact-inner">
-    <p class="eyebrow mono reveal" data-i18n="contact.eyebrow">/* contato */ fale comigo</p>
-    <h2 class="section-title reveal" data-i18n="contact.title">Vamos tocar juntos?</h2>
-    <p class="section-lead reveal" data-i18n="contact.lead">Tem um projeto em mente ou quer bater um papo sobre tecnologia? Me chama.</p>
-
-    <div class="contact-links reveal">
-      <a href="mailto:douglasphelipedpss@gmail.com" class="contact-link">
-        <span class="contact-icon">✉</span> douglasphelipedpss@gmail.com
+      <a href="#about" class="scroll-cue" aria-label="Rolar para baixo">
+        <span></span>
       </a>
-      <a href="https://github.com/DouglaasPH" class="contact-link" target="_blank" rel="noopener">
-        <span class="contact-icon">◐</span> github.com/DouglaasPH
-      </a>
-      <a href="https://www.linkedin.com/in/douglas-phelipe" class="contact-link" target="_blank" rel="noopener">
-        <span class="contact-icon">◑</span> linkedin.com/in/douglas-phelipe
-      </a>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="footer-inner">
-    <svg viewBox="0 0 40 40" class="logo-sticks" aria-hidden="true">
-      <rect x="4" y="30" width="30" height="4" rx="2" transform="rotate(-35 4 30)" fill="currentColor"/>
-      <rect x="4" y="6" width="30" height="4" rx="2" transform="rotate(35 4 6)" fill="currentColor"/>
-    </svg>
-    <p class="mono" data-i18n="footer.text">RAFAEL LIMA — construído com código e compasso.</p>
-    <a href="#hero" class="footer-top" aria-label="Voltar ao topo">↑</a>
-  </div>
-</footer>
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="section-inner">
+        <p class="eyebrow mono reveal" data-i18n="about.eyebrow">
+          /* sobre mim */ compasso e código
+        </p>
+        <h2 class="section-title reveal" data-i18n="about.title">
+          Quem toca por trás do teclado.
+        </h2>
 
-<script src="script.js"></script>
-</body>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p data-i18n="about.p1">
+              Sou <strong>Douglas</strong>, desenvolvedor full stack com foco em
+              construir produtos que funcionam de ponta a ponta — do banco de
+              dados à interface.
+            </p>
+            <p data-i18n="about.p2">
+              Fora do código, sou baterista. Aprendi que estúdio e escritório
+              pedem a mesma coisa: escutar antes de tocar, manter o tempo e
+              saber quando o silêncio vale mais que uma nota extra.
+            </p>
+            <p data-i18n="about.p3">
+              Gosto de projetos que exigem estrutura — arquitetura clara, APIs
+              previsíveis, interfaces que respondem no tempo certo.
+            </p>
+            <p data-i18n="about.p4">
+              Fora do código, sou baterista. Aprendi que estúdio e escritório
+              pedem a mesma coisa: escutar antes de tocar, manter o tempo e
+              saber quando o silêncio vale mais que uma nota extra.
+            </p>
+          </div>
+
+          <div class="about-stats reveal">
+            <div class="stat-card">
+              <span>
+                <span class="stat-num mono" data-count="3">0</span
+                ><span class="stat-suffix">+</span>
+              </span>
+              <span class="stat-label" data-i18n="about.stat1"
+                >ANOS ESTUDANDO</span
+              >
+            </div>
+            <div class="stat-card">
+              <span class="stat-num mono" data-count="3">0</span>
+              <span class="stat-label" data-i18n="about.stat2"
+                >PROJETOS FEITOS</span
+              >
+            </div>
+            <div class="stat-card">
+              <span class="stat-num mono" data-count="6">0</span>
+              <span class="stat-label" data-i18n="about.stat3"
+                >STACKS DOMINADAS</span
+              >
+            </div>
+            <div class="stat-card">
+              <span class="stat-num mono" data-count="92">0</span>
+              <span class="stat-label" data-i18n="about.stat4"
+                >BPM EM FOCO</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS — MIXING CONSOLE ============ -->
+    <section class="section section-alt" id="skills">
+      <div class="section-inner">
+        <p class="eyebrow mono reveal" data-i18n="skills.eyebrow">
+          /* stack técnica */ mesa de som
+        </p>
+        <h2 class="section-title reveal" data-i18n="skills.title">
+          Cada tecnologia no seu canal.
+        </h2>
+        <p class="section-lead reveal" data-i18n="skills.lead">
+          Ferramentas que uso no dia a dia, equalizadas por nível de domínio.
+        </p>
+
+        <div class="console reveal" id="console">
+          <div class="channel" data-level="90">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">90%</span>
+            <span class="channel-name">JavaScript</span>
+          </div>
+          <div class="channel" data-level="85">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">85%</span>
+            <span class="channel-name">TypeScript</span>
+          </div>
+          <div class="channel" data-level="85">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">85%</span>
+            <span class="channel-name">React</span>
+          </div>
+          <div class="channel" data-level="77">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">77%</span>
+            <span class="channel-name">Angular</span>
+          </div>
+          <div class="channel" data-level="72">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">72%</span>
+            <span class="channel-name">Python</span>
+          </div>
+          <div class="channel" data-level="74">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">74%</span>
+            <span class="channel-name">Java</span>
+          </div>
+          <div class="channel" data-level="84">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">84%</span>
+            <span class="channel-name">MySQL</span>
+          </div>
+          <div class="channel" data-level="80">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">80%</span>
+            <span class="channel-name">PostgreSQL</span>
+          </div>
+          <div class="channel" data-level="83">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">83%</span>
+            <span class="channel-name">Git</span>
+          </div>
+          <div class="channel" data-level="74">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">74%</span>
+            <span class="channel-name">Docker</span>
+          </div>
+          <div class="channel" data-level="79">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">79%</span>
+            <span class="channel-name">AWS</span>
+          </div>
+          <div class="channel" data-level="65">
+            <div class="channel-track">
+              <div class="channel-fill"></div>
+              <div class="channel-cap"></div>
+            </div>
+            <span class="channel-pct mono">65%</span>
+            <span class="channel-name">Linux</span>
+          </div>
+        </div>
+
+        <div class="stack-icons reveal" aria-hidden="true">
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angular/angular-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+            alt=""
+          />
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section class="section" id="certifications">
+      <div class="section-inner">
+        <p class="eyebrow mono reveal" data-i18n="certs.eyebrow">
+          /* certificações */ discos de ouro
+        </p>
+        <h2 class="section-title reveal" data-i18n="certs.title">
+          Certificações que já subi ao palco.
+        </h2>
+        <p class="section-lead reveal" data-i18n="certs.lead">
+          Certificações que validam meu conhecimento em nuvem.
+        </p>
+
+        <div class="cert-grid reveal">
+          <a
+            href="https://www.credly.com/badges/97fe4945-e698-48be-aedc-86b460f9dacb"
+            target="_blank"
+            rel="noopener"
+            class="cert-card"
+            style="--cert-color: var(--accent-3)"
+          >
+            <img
+              src="certifications/aws-certified-cloud-practitioner.png"
+              alt="aws certified cloud practitioner"
+              class="cert-badge-svg"
+            />
+            <h3 class="cert-name">AWS Certified Cloud Practitioner</h3>
+            <p class="cert-issuer mono">Amazon Web Services</p>
+            <span class="cert-link" data-i18n="certs.link"
+              >Ver certificado ↗</span
+            >
+          </a>
+
+          <a
+            href="https://www.credly.com/badges/e08314f2-38d6-4125-9de3-1aabf016c727"
+            target="_blank"
+            rel="noopener"
+            class="cert-card"
+            style="--cert-color: var(--accent)"
+          >
+            <img
+              src="certifications/aws-certified-developer-associate.png"
+              alt="aws certified developer associate"
+              class="cert-badge-svg"
+            />
+            <h3 class="cert-name">AWS Certified Developer – Associate</h3>
+            <p class="cert-issuer mono">Amazon Web Services</p>
+            <span class="cert-link" data-i18n="certs.link"
+              >Ver certificado ↗</span
+            >
+          </a>
+
+          <a
+            href="https://www.credly.com/badges/6be7e994-2a98-46a2-b862-23bc4f7f848e"
+            target="_blank"
+            rel="noopener"
+            class="cert-card"
+            style="--cert-color: var(--accent-2)"
+          >
+            <img
+              src="certifications/aws-certified-solutions-architect-associate.png"
+              alt="aws certified solutions architect associate"
+              class="cert-badge-svg"
+            />
+            <h3 class="cert-name">
+              AWS Certified Solutions Architect – Associate
+            </h3>
+            <p class="cert-issuer mono">Amazon Web Services</p>
+            <span class="cert-link" data-i18n="certs.link"
+              >Ver certificado ↗</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="section-inner">
+        <p class="eyebrow mono reveal" data-i18n="projects.eyebrow">
+          /* projetos */ setlist
+        </p>
+        <h2 class="section-title reveal" data-i18n="projects.title">
+          Faixas que já construí.
+        </h2>
+        <p class="section-lead reveal" data-i18n="projects.lead">
+          Uma seleção de projetos reais — de ferramentas simples a sistemas
+          completos.
+        </p>
+
+        <div class="tracklist reveal" id="tracklist">
+          <article class="track">
+            <span class="track-num mono">01</span>
+            <div class="track-body">
+              <h3 class="track-title">Radioscan</h3>
+              <p class="track-tech mono">
+                Angular · Java · Python · Docker · AWS · Terraform
+              </p>
+              <p class="track-desc" data-i18n="projects.p1desc">
+                Plataforma web para visualização e gestão de exames
+                radiológicos, focada na navegação segura de laudos e
+                laudos/imagens para pacientes e profissionais de saúde.
+              </p>
+            </div>
+            <div class="track-link-div">
+              <a
+                href="https://github.com/DouglaasPH/frontend-radioscan"
+                class="track-link"
+                data-i18n="projects.frontend.link"
+                >Ver no GitHub (frontend) ↗</a
+              >
+              <a
+                href="https://github.com/DouglaasPH/api-radioscan"
+                class="track-link"
+                data-i18n="projects.backend.link"
+                >Ver no GitHub (backend) ↗</a
+              >
+              <a
+                href="https://github.com/DouglaasPH/terraform-radioscan"
+                class="track-link"
+                data-i18n="projects.terraform.link"
+                >Ver no GitHub (terraform) ↗</a
+              >
+            </div>
+          </article>
+
+          <article class="track">
+            <span class="track-num mono">02</span>
+            <div class="track-body">
+              <h3 class="track-title">iFlow</h3>
+              <p class="track-tech mono">Next.js · NestJS · MySQL</p>
+              <p class="track-desc" data-i18n="projects.p2desc">
+                Plataforma para gestão e rastreabilidade de ocorrências
+                acadêmicas, conectando professores, coordenação e responsáveis
+                do registro à resolução.
+              </p>
+            </div>
+            <a
+              href="https://github.com/IFPE-Jaboatao/ocorrencias-time1"
+              class="track-link"
+              data-i18n="projects.link"
+              >Ver no GitHub ↗</a
+            >
+          </article>
+
+          <article class="track">
+            <span class="track-num mono">03</span>
+            <div class="track-body">
+              <h3 class="track-title">Agendify</h3>
+              <p class="track-tech mono">
+                React · Python · FastAPI · PostgreSQL
+              </p>
+              <p class="track-desc" data-i18n="projects.p3desc">
+                Plataforma de agendamento inteligente para autônomos,
+                automatizando a gestão de horários, clientes e disponibilidade
+                em um só lugar.
+              </p>
+            </div>
+            <div class="track-link-div">
+              <a href="#" class="track-link" data-i18n="projects.frontend.link"
+                >Ver no GitHub (frontend) ↗</a
+              >
+              <a href="#" class="track-link" data-i18n="projects.backend.link"
+                >Ver no GitHub (backend) ↗</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TIMELINE ============ -->
+    <section class="section section-alt" id="timeline">
+      <div class="section-inner">
+        <p class="eyebrow mono reveal" data-i18n="timeline.eyebrow">
+          /* trajetória */ set completo
+        </p>
+        <h2 class="section-title reveal" data-i18n="timeline.title">
+          Minha jornada até aqui.
+        </h2>
+
+        <div class="beatline reveal" id="beatline">
+          <div class="beat-item">
+            <span class="beat-dot"></span>
+            <span class="beat-year mono"
+              >2026 — <span data-i18n="timeline.now">AGORA</span></span
+            >
+            <h3 data-i18n="timeline.t1title">Desenvolvedor Full Stack Jr.</h3>
+            <p data-i18n="timeline.t1desc">
+              Construindo produtos completos com React e Node.js, aprendendo
+              arquitetura de sistemas no dia a dia.
+            </p>
+          </div>
+          <div class="beat-item">
+            <span class="beat-dot"></span>
+            <span class="beat-year mono">2025</span>
+            <h3 data-i18n="timeline.t2title">Mergulho em back-end</h3>
+            <p data-i18n="timeline.t2desc">
+              APIs REST, bancos relacionais e autenticação passaram a fazer
+              parte da rotina de projetos.
+            </p>
+          </div>
+          <div class="beat-item">
+            <span class="beat-dot"></span>
+            <span class="beat-year mono">2024</span>
+            <h3 data-i18n="timeline.t3title">Primeiros passos no código</h3>
+            <p data-i18n="timeline.t3desc">
+              Fundamentos de lógica, HTML, CSS e JavaScript — os primeiros
+              compassos da jornada.
+            </p>
+          </div>
+          <div class="beat-item">
+            <span class="beat-dot"></span>
+            <span class="beat-year mono">∞</span>
+            <h3 data-i18n="timeline.t4title">Baterista nas horas vagas</h3>
+            <p data-i18n="timeline.t4desc">
+              Ensaiando compasso com o mesmo cuidado que reviso um pull request.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="section-inner contact-inner">
+        <p class="eyebrow mono reveal" data-i18n="contact.eyebrow">
+          /* contato */ fale comigo
+        </p>
+        <h2 class="section-title reveal" data-i18n="contact.title">
+          Vamos tocar juntos?
+        </h2>
+        <p class="section-lead reveal" data-i18n="contact.lead">
+          Tem um projeto em mente ou quer bater um papo sobre tecnologia? Me
+          chama.
+        </p>
+
+        <div class="contact-links reveal">
+          <a href="mailto:douglasphelipedpss@gmail.com" class="contact-link">
+            <span class="contact-icon">✉</span>
+            <span>douglasphelipedpss@gmail.com</span>
+          </a>
+          <a
+            href="https://github.com/DouglaasPH"
+            class="contact-link"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="contact-icon">◐</span>
+            <span>github.com/DouglaasPH</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/douglas-phelipe"
+            class="contact-link"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="contact-icon">◑</span>
+            <span>linkedin.com/in/douglas-phelipe</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <svg viewBox="0 0 40 40" class="logo-sticks" aria-hidden="true">
+          <rect
+            x="4"
+            y="30"
+            width="30"
+            height="4"
+            rx="2"
+            transform="rotate(-35 4 30)"
+            fill="currentColor"
+          />
+          <rect
+            x="4"
+            y="6"
+            width="30"
+            height="4"
+            rx="2"
+            transform="rotate(35 4 6)"
+            fill="currentColor"
+          />
+        </svg>
+        <p class="mono" data-i18n="footer.text">
+          RAFAEL LIMA — construído com código e compasso.
+        </p>
+        <a href="#hero" class="footer-top" aria-label="Voltar ao topo">↑</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
